@@ -14,10 +14,12 @@ if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ];then
 fi
 sudo php composer-setup.php --quiet
 sudo rm -f composer-setup.php
+sudo cp -f composer.phar /var/www/html/composer.phar
 sudo rm -f /usr/local/bin/composer
 sudo mv -f composer.phar /usr/local/bin/composer
 
-# wait for composer register
-sleep 5s
+cd /var/www/html/
+php composer.phar update
+#composer update #not work in script
 
 sudo chown -hR apache:apache /var/www/html/

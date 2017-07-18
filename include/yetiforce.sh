@@ -15,9 +15,6 @@ select yn in "Stable" "Developer" "Nothing";do
     sudo git clone -b stable https://github.com/YetiForceCompany/YetiForceCRM.git /var/www/html/
     sudo chown -hR apache:apache /var/www/html/
     sudo sh include/install_composer.sh
-    cd /var/www/html/
-    composer update
-    sudo chown -hR apache:apache /var/www/html/
     break;;
     Developer)
     echo "procesing..."
@@ -26,9 +23,6 @@ select yn in "Stable" "Developer" "Nothing";do
     sudo git clone -b developer https://github.com/YetiForceCompany/YetiForceCRM.git /var/www/html/
     sudo chown -hR apache:apache /var/www/html/
     sudo sh include/install_composer.sh
-    cd /var/www/html/
-    composer update
-    sudo chown -hR apache:apache /var/www/html/
     break;;
     Nothing) break;;
   esac
