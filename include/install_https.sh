@@ -77,7 +77,7 @@ select yn in "HTTPS" "HTTP";do
 
     sudo echo 'Header always set Accept-Charset "utf-8, iso-8859-1"' >> /etc/httpd/conf/httpd.conf
     sudo echo 'Header unset Strict-Transport-Security' >> /etc/httpd/conf/httpd.conf
-    sudo echo 'Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains"' >> /etc/httpd/conf/httpd.conf
+    sudo echo 'Header always set Strict-Transport-Security "max-age=15768000; includeSubDomains; preload"' >> /etc/httpd/conf/httpd.conf
     sudo echo 'Header unset X-Frame-Options' >> /etc/httpd/conf/httpd.conf
     sudo echo 'Header set X-Frame-Options "SAMEORIGIN"' >> /etc/httpd/conf/httpd.conf
     #sudo echo 'Header set X-Frame-Options "ALLOW-FROM https://localhost"' >> /etc/httpd/conf/httpd.conf
